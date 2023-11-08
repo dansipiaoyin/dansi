@@ -1,64 +1,68 @@
 # baseURL = 'http://example.org/'
 languageCode = 'zh-cn'
 title = '箪食'
-theme = "hugo-coder"
-languagecode = "zh"
-defaultcontentlanguage = "zh"
+theme = "hugo-theme-stack"
+defaultcontentlanguage = "zh-cn"
 
-paginate = 20
+# paginate = 20
 
+hasCJKLanguage = true
 # disqusShortname = "yourdiscussshortname"
 
-[markup.highlight]
-    style = "github-dark"
-
 [params]
-    author = "82e56c34"
-    info = "随便聊聊"
-    # description = "John Doe's personal website"
-    # keywords = "blog,developer,personal"
-    # avatarurl = "images/avatar.jpg"
-    # gravatar = "john.doe@example.com"
+    description = "一箪食，一瓢饮。"
+    mainSections = ["post"]
     
-    # faviconSVG = "/img/favicon.svg"
-    # favicon_32 = "/img/favicon-32x32.png"
-    # favicon_16 = "/img/favicon-16x16.png"
-    
+[params.footer]
     since = 2023
-    
-    # enableTwemoji = true
-    
-    colorScheme = "auto"
-    hidecolorschemetoggle = false
-    
-    # customCSS = ["css/custom.css"]
-    # customSCSS = ["scss/custom.scss"]
-    # customJS = ["js/custom.js"]
 
-[taxonomies]
-    category = "类别"
-    series = "系列"
-    tag = "标签"
-    author = "作者"
+[params.sidebar]
+    compact = true
+    subtitle = "一箪食，一瓢饮。"
 
-# Social links
-# [[params.social]]
-#     name = "Github"
-#     icon = "fa fa-github fa-2x"
-#     weight = 1
-#     url = "https://github.com/johndoe/"
-# [[params.social]]
-#     name = "Twitter"
-#     icon = "fa fa-twitter fa-2x"
-#     weight = 3
-#     url = "https://twitter.com/johndoe/"
+[params.sidebar.avatar]
+    enabled = false
 
-# Menu links
-[[menu.main]]
-    name = "文章"
-    weight = 1
-    url  = "posts/"
-[[menu.main]]
-    name = "关于"
-    weight = 2
-    url = "about/"
+# [[params.widgets.homepage]]
+#     type = "search"
+
+[[params.widgets.homepage]]
+    type = "archives"
+
+    [params.widgets.homepage.params]
+        limit = 5
+
+[[params.widgets.homepage]]
+    type = "tag-cloud"
+
+    [params.widgets.homepage.params]
+        limit = 10
+
+[permalinks]
+    post = "/p/:slug/"
+    page = "/:slug/"
+
+[[params.widgets.page]]
+    type = "toc"
+
+[params.article]
+    math = true
+    readingTime = false
+
+# Markdown renderer configuration
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.tableOfContents]
+endLevel = 4
+ordered = true
+startLevel = 2
+
+[markup.highlight]
+noClasses = false
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+tabWidth = 4
