@@ -20,6 +20,8 @@ categories:
 * FF7 RE
 * 古龙风云录
 * 黑神话悟空
+* 龙之信条2
+* Avowed
 
 ## 想玩的
 
